@@ -1,38 +1,31 @@
-# 🐍 PyCodeBot Termux v1.0
-> **Bot trả lời câu hỏi lập trình Python chạy trực tiếp trên Termux (Android)**  
-> Không cần API Key trả phí, không cần máy chủ, tối ưu cho điện thoại **RAM ≤ 4GB**, phản hồi **< 3 giây**.
+# 🐍 PyCodeBot Termux
+> **Bot trả lời câu hỏi Python chạy trực tiếp trên Termux**  
+> Tối ưu cho Android • Không cần API trả phí • Dung lượng nhẹ • Phản hồi nhanh
+
+🔗 **Kho dự án**: https://github.com/yamemnocart/pycodebot-termux
 
 ---
 
-## ✨ TÍNH NĂNG CHÍNH
-- 🔍 **Tìm kiếm thông minh**: DuckDuckGo miễn phí + GitHub API (Issues/Gists/Code)
-- 🕷️ **5 scraper chuyên biệt**: Stack Overflow (ưu tiên #1), GitHub, GeeksforGeeks, Real Python, TutorialsPoint + 1 scraper đa năng dự phòng mọi trang web
-- 🧠 **Bộ não tự xử lý**:
-  - Lọc trùng lặp nội dung > 70% bằng thuật toán **MinHash 32** (siêu nhẹ)
-  - Xếp hạng câu trả lời theo `điểm vote × trọng số nguồn uy tín`
-  - **Tự dịch sang tiếng Việt**, giữ nguyên 100% tên hàm, thư viện, code
-  - ✅ **Chạy code mẫu an toàn** trong sandbox 3 giây, báo lỗi nếu có
-- ⚡ **Tối ưu tốc độ**: Cache 7 ngày → hỏi lại câu cũ trả về trong 0.1s
-- 💬 **Giao diện chat đơn giản**: `[Bạn]: ...` `[Bot]: ...`
-- 📜 **Lịch sử 50 câu hỏi**, 5 lệnh hỗ trợ: `/help /clear /history /cache /exit`
-- 🛡️ **Chống chặn IP**: User-Agent xoay vòng 24 bản, delay ngẫu nhiên, tự động backoff khi gặp lỗi 429
+## ✨ TÍNH NĂNG NỔI BẬT
+- 🔍 **Tìm kiếm đa nguồn**: DuckDuckGo miễn phí + GitHub API (Issues/Code/Gists) + Stack Overflow + GeeksforGeeks + Real Python + TutorialsPoint
+- 🧠 **Xử lý thông minh**: Lọc trùng lặp, xếp hạng theo độ uy tín & số bình chọn, tự dịch sang tiếng Việt **giữ nguyên thuật ngữ code**
+- ✅ **Kiểm tra an toàn**: Chạy thử đoạn code mẫu trong môi trường giới hạn
+- ⚡ **Tối ưu hiệu năng**: Bộ đệm 7 ngày, hoạt động mượt trên máy **RAM ≤ 4GB**, thời gian phản hồi dưới 3 giây
+- 💬 **Giao diện đơn giản**: Kiểu hội thoại `[Bạn] ↔ [Bot]`, các lệnh nhanh tiện dụng
 
 ---
 
-## ⚙️ YÊU CẦU HỆ THỐNG
-- Android 7.0+
-- Termux (tải từ F-Droid, KHÔNG dùng bản CH Play đã lỗi thời)
-- RAM ≥ 2GB (tối ưu nhất ≤ 4GB)
-- Kết nối mạng Wi-Fi / 4G
+## 📋 YÊU CẦU
+- Android 7.0 trở lên
+- **Termux tải từ F‑Droid** (không dùng bản cũ trên CH Play)
+- Kết nối mạng ổn định
 
 ---
 
-## 🚀 CÀI ĐẶT 1 DÒNG LỆNH
-Mở Termux, **dán toàn bộ dòng dưới đây và nhấn Enter**:
+## 🚀 CÀI ĐẶT CHỈ 1 DÒNG
+Mở Termux, dán toàn bộ lệnh sau:
 ```bash
 pkg update -y && pkg upgrade -y && \
-pkg install -y python git libxml2 libxslt libcrypt ndk-sysroot clang && \
-git clone https://github.com/pycodebot/termux-bot.git pycodebot && \
-cd pycodebot && \
-pip install --upgrade pip && \
-pip install -r requirements.txt
+pkg install -y python git libxml2 libxslt clang && \
+git clone https://github.com/yamemnocart/pycodebot-termux.git pycodebot && \
+cd pycodebot && pip install -r requirements.txt
